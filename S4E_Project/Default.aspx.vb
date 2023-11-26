@@ -2,7 +2,7 @@
     Inherits Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-        Response.Redirect(MontarURL("/Fomularios/CadastrarAssociado.aspx"))
+        Response.Redirect(MontarURL("Formularios/CadastrarAssociado.aspx"))
     End Sub
     Protected Shared Function MontarURL(url As String) As String
         If url.StartsWith("/") Then

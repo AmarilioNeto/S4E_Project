@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class CadastrarAssociado
+Partial Public Class ConsultarAssociado
 
     '''<summary>
     '''Controle nome.
@@ -21,6 +21,15 @@ Partial Public Class CadastrarAssociado
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
     Protected WithEvents nome As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Controle Id.
+    '''</summary>
+    '''<remarks>
+    '''Campo gerado automaticamente.
+    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+    '''</remarks>
+    Protected WithEvents Id As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Controle cpf.
@@ -41,47 +50,20 @@ Partial Public Class CadastrarAssociado
     Protected WithEvents dataNascimento As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Controle ListarEmpresa.
+    '''Controle Consultar.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents ListarEmpresa As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Consultar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Controle AddEmpresa.
+    '''Controle gdvAssociado.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents AddEmpresa As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Controle EmpresasAdicionadas.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents EmpresasAdicionadas As Global.System.Web.UI.WebControls.ListBox
-
-    '''<summary>
-    '''Controle RemoveEmpresa.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents RemoveEmpresa As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Controle Incluir.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents Incluir As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents gdvAssociado As Global.System.Web.UI.WebControls.GridView
 End Class

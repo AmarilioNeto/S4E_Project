@@ -57,7 +57,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="CadastrarAssociado.aspx">Cadastra Associado</a>
-                        <a class="dropdown-item" href="#">Consultar Associado</a>
+                        <a class="dropdown-item" href="ConsultarAssociado.aspx">Consultar Associado</a>
                         <a class="dropdown-item" href="#">Atualizar Associado</a>
                         <a class="dropdown-item" href="#">Excluir Associado</a>
                     </div>

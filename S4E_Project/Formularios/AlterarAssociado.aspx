@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="CadastrarAssociado.aspx.vb" Inherits="S4E_Project.CadastrarAssociado" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="AlterarAssociado.aspx.vb" Inherits="S4E_Project.AlterarAssociado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
+     <br />
     <style>
         select.form-control:not([size]):not([multiple]) {
             height: calc(2.25rem + 11px);
@@ -11,7 +10,7 @@
         <div class="container-fluid">
             <div class="card-header" style="margin-bottom: 12px;">
                 <div class="text-header">
-                    <h3 class="text-header">Cadastra Associado</h3>
+                    <h3 class="text-header">Alterar Associado</h3>
                 </div>
             </div>
             <!-- Modal -->
@@ -53,24 +52,16 @@
                                     <div class="form-group">
                                         <label>Data de Nascimento</label>
                                         <asp:TextBox runat="server" type="date" class="form-control" ID="dataNascimento"></asp:TextBox>
-                                    </div>
-                                    <div class="form-group ">
-                                       
-                                        <label>Empresas</label>
-                                        <asp:DropDownList runat="server" SelectionMode="Multiple" DataValueField ="id"  CssClass="form-control" ID="ListarEmpresa">
-                                        </asp:DropDownList>
-                                        <br />
-                                        <asp:Button runat="server" ID="AddEmpresa" CssClass ="btn btn-success" Text ="Incluir Empresa" OnClick="AddEmpresa_Click" />
-                                    </div>
+                                    </div>                            
                                      <div class="form-group">
-                                        <label>Empresas Adcionadas</label>
-                                        <asp:ListBox runat="server"  SelectionMode="Multiple"  class="form-control" ID="EmpresasAdicionadas"></asp:ListBox>
+                                        <label>Empresas Relacionadas</label>
+                                        <asp:ListBox runat="server"  SelectionMode="Multiple"  class="form-control" ID="EmpresasRelacionadas"></asp:ListBox>
                                          <br />
-                                         <asp:Button runat="server" ID="RemoveEmpresa" CssClass ="btn btn-danger" Text ="Remover Empresa" OnClick="RemoveEmpresa_Click" />
+<%--                                         <asp:Button runat="server" ID="RemoveEmpresa" CssClass ="btn btn-danger" Text ="Remover Empresa" OnClick="RemoveEmpresa_Click" />--%>
                                     </div>
 
                                     
-                                       <asp:Button runat="server" ID="Incluir" CssClass="btn btn-primary" Text="Salvar" OnClick="Incluir_Click" />
+                                       <%--<asp:Button runat="server" ID="Incluir" CssClass="btn btn-primary" Text="Salvar" OnClick="Incluir_Click" />--%>
  
                                 </div>
                             </div>
@@ -81,5 +72,4 @@
         </div>
     </section>
     <script src="../Scripts/Associado-Js/Associado.js"></script>
-
 </asp:Content>
