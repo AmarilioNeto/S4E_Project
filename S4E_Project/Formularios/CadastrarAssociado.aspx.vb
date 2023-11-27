@@ -82,9 +82,20 @@ Public Class CadastrarAssociado
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", $"alertaPopUp('Você deve Escolher pelo menos uma empresa') ", True)
                 Return
             Else
-                ListarEmpresa.Items.Add(EmpresasAdicionadas.SelectedItem.Text)
-                For Each index In ListarEmpresa.Items
-                    EmpresasAdicionadas.Items.Remove(index)
+                For index As Integer = 0 To EmpresasAdicionadas.Items.Count - 1
+                    If EmpresasAdicionadas.Items(index).Selected = True Then
+                        Dim item = EmpresasAdicionadas.Items(index).Text
+                        ListarEmpresa.Items.Add(item)
+                    End If
+                Next
+
+                For index As Integer = EmpresasAdicionadas.Items.Count - 1 To 0 Step -1
+
+                    If EmpresasAdicionadas.Items(index).Selected = True Then
+                        Dim item = EmpresasAdicionadas.Items(index).Text
+                        EmpresasAdicionadas.Items.Remove(item)
+
+                    End If
                 Next
             End If
         Catch ex As Exception

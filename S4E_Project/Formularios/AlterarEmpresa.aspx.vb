@@ -60,11 +60,22 @@ Public Class AlterarEmpresa
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", $"alertaPopUp('Você deve Escolher pelo menos uma empresa') ", True)
                 Return
             Else
-                AssociadosRemovidos.Items.Add(AssociadosRelacionados.SelectedItem.Text)
-                For Each index In AssociadosRemovidos.Items
-                    AssociadosRelacionados.Items.Remove(index)
+
+                For index As Integer = 0 To AssociadosRelacionados.Items.Count - 1
+                    If AssociadosRelacionados.Items(index).Selected = True Then
+                        Dim item = AssociadosRelacionados.Items(index).Text
+                        AssociadosRemovidos.Items.Add(item)
+                    End If
                 Next
 
+                For index As Integer = AssociadosRelacionados.Items.Count - 1 To 0 Step -1
+
+                    If AssociadosRelacionados.Items(index).Selected = True Then
+                        Dim item = AssociadosRelacionados.Items(index).Text
+                        AssociadosRelacionados.Items.Remove(item)
+
+                    End If
+                Next
             End If
         Catch ex As Exception
             Throw ex
@@ -78,9 +89,20 @@ Public Class AlterarEmpresa
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", $"alertaPopUp('Você deve Escolher pelo menos uma empresa') ", True)
                 Return
             Else
-                AssociadosRelacionados.Items.Add(AssociadosRemovidos.SelectedItem.Text)
-                For Each index In AssociadosRelacionados.Items
-                    AssociadosRemovidos.Items.Remove(index)
+                For index As Integer = 0 To AssociadosRemovidos.Items.Count - 1
+                    If AssociadosRemovidos.Items(index).Selected = True Then
+                        Dim item = AssociadosRemovidos.Items(index).Text
+                        AssociadosRelacionados.Items.Add(item)
+                    End If
+                Next
+
+                For index As Integer = AssociadosRemovidos.Items.Count - 1 To 0 Step -1
+
+                    If AssociadosRemovidos.Items(index).Selected = True Then
+                        Dim item = AssociadosRemovidos.Items(index).Text
+                        AssociadosRemovidos.Items.Remove(item)
+
+                    End If
                 Next
             End If
 
@@ -155,9 +177,20 @@ Public Class AlterarEmpresa
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", $"alertaPopUp('Você deve Escolher pelo menos uma empresa') ", True)
                 Return
             Else
-                ListarAssociados.Items.Add(AssociadosAdicionados.SelectedItem.Text)
-                For Each index In ListarAssociados.Items
-                    AssociadosAdicionados.Items.Remove(index)
+
+                For index As Integer = 0 To AssociadosAdicionados.Items.Count - 1
+                    If AssociadosAdicionados.Items(index).Selected = True Then
+                        Dim item = AssociadosAdicionados.Items(index).Text
+                        ListarAssociados.Items.Add(item)
+                    End If
+                Next
+
+                For index As Integer = AssociadosAdicionados.Items.Count - 1 To 0 Step -1
+
+                    If AssociadosAdicionados.Items(index).Selected = True Then
+                        Dim item = AssociadosAdicionados.Items(index).Text
+                        AssociadosAdicionados.Items.Remove(item)
+                    End If
                 Next
             End If
         Catch ex As Exception
