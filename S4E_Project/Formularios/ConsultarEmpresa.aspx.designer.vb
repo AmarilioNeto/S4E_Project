@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class CadastrarEmpresa
+Partial Public Class ConsultarEmpresa
 
     '''<summary>
     '''Controle nome.
@@ -23,6 +23,15 @@ Partial Public Class CadastrarEmpresa
     Protected WithEvents nome As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Controle Id.
+    '''</summary>
+    '''<remarks>
+    '''Campo gerado automaticamente.
+    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+    '''</remarks>
+    Protected WithEvents Id As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Controle cnpj.
     '''</summary>
     '''<remarks>
@@ -32,47 +41,20 @@ Partial Public Class CadastrarEmpresa
     Protected WithEvents cnpj As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Controle ListarAssociado.
+    '''Controle Consultar.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents ListarAssociado As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Consultar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Controle AddAssociado.
+    '''Controle gdvEmpresa.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents AddAssociado As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Controle AssociadosAdicionados.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents AssociadosAdicionados As Global.System.Web.UI.WebControls.ListBox
-
-    '''<summary>
-    '''Controle RemoveAssociado.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents RemoveAssociado As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Controle Incluir.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents Incluir As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents gdvEmpresa As Global.System.Web.UI.WebControls.GridView
 End Class

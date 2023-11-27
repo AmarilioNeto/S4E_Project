@@ -57,9 +57,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="CadastrarAssociado.aspx">Cadastra Associado</a>
-                        <a class="dropdown-item" href="ConsultarAssociado.aspx">Consultar Associado</a>
-                        <a class="dropdown-item" href="#">Atualizar Associado</a>
-                        <a class="dropdown-item" href="#">Excluir Associado</a>
+                        <a class="dropdown-item" href="ConsultarAssociado.aspx">Consultar Associado</a>                        
                     </div>
                 </div>
                  <div class="btn-group" style="margin-left:1em;">
@@ -68,9 +66,8 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="CadastrarEmpresa.aspx">Cadastra Empresa</a>
-                        <a class="dropdown-item" href="#">Consultar Empresa</a>
-                        <a class="dropdown-item" href="#">Atualizar Empresa</a>                       
-                        <a class="dropdown-item" href="#">Excluir Empresa</a>
+                        <a class="dropdown-item" href="ConsultarEmpresa.aspx">Consultar Empresa</a>
+                        
                     </div>
                 </div>
                 <%-- <div class="navbar-collapse collapse">

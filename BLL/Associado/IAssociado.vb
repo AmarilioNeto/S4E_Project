@@ -8,4 +8,6 @@ Public Interface IAssociado
     Function Deletar(id As Integer) As Boolean
     Function ObterAssciadoById(id As Integer) As DataTable
     Function ObterEmpresaRelacionadasAssociado(id As Integer) As DataTable
+    Function AtualizarAssocido(associado As Associado, id As Integer, listRemovidasRelacionamento As List(Of String)) As Associado
+    Function AtualizarAssociadoSemRelacionamento(associado As Associado, id As Integer) As Associado
 End Interface

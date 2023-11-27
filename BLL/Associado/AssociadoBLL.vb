@@ -6,7 +6,7 @@ Public Class AssociadoBLL
     Implements IAssociado
     Public Function Salvar(associado As Associado) As Associado Implements IAssociado.Salvar
         Try
-
+            
             Dim sql As String = $"Insert into Associado (Nome, Cpf, DataNascimento) values('{associado.Nome}','{associado.Cpf}', '{associado.DataNascimento}')"
             Dim table As New DataTable
             table = AcessoDAL.GetDataTable(sql)
@@ -43,9 +43,9 @@ Public Class AssociadoBLL
             Dim table As New DataTable
             table = AcessoDAL.GetDataTable(sql)
             If table.Rows.Count = 0 Then
-                Return True
+                Return "True"
             Else
-                Return False
+                Return table.Rows(0).ItemArray(0)
             End If
 
         Catch ex As Exception
@@ -107,6 +107,47 @@ Public Class AssociadoBLL
             Dim table As New DataTable
             table = AcessoDAL.GetDataTable(sql)
             Return table
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+    Public Function AtualizarAssocido(associado As Associado, id As Integer, listRemovidasRelacionamento As List(Of String)) As Associado Implements IAssociado.AtualizarAssocido
+        Try
+            If listRemovidasRelacionamento.Count > 0 Then
+                For Each Index In listRemovidasRelacionamento
+                    Dim sql3 As String = $"delete Associado_Empresa where Associado_Id = {id} and Empresa_CNPJ = '{Index.Split("/")(1).Trim()}' "
+                    Dim table3 As New DataTable
+                    table3 = AcessoDAL.GetDataTable(sql3)
+
+                Next
+            End If
+            Dim sql As String = $"Update associado set Nome = '{associado.Nome}', Cpf = '{associado.Cpf}',  DataNascimento = '{associado.DataNascimento}' where id = {id}"
+            Dim table As New DataTable
+            table = AcessoDAL.GetDataTable(sql)
+            If associado.ListEmpresas.Count > 0 Then
+                For Each Index In associado.ListEmpresas
+                    Dim sql2 As String = $"exec UpdateAssociadoEmpresa '{Index.Split("/")(1).Trim()}', {id},'{associado.Cpf}' "
+                    Dim table2 As New DataTable
+                    table = AcessoDAL.GetDataTable(sql2)
+                Next
+            End If
+            Return GetAssociado(table)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+    Public Function AtualizarAssociadoSemRelacionamento(associado As Associado, id As Integer) As Associado Implements IAssociado.AtualizarAssociadoSemRelacionamento
+        Try
+            Dim sql As String = $"Update associado set Nome = '{associado.Nome}', Cpf = '{associado.Cpf}',  DataNascimento = '{associado.DataNascimento}' where id = {id}"
+            Dim table As New DataTable
+            table = AcessoDAL.GetDataTable(sql)
+            For Each Index In associado.ListEmpresas
+                Dim sql2 As String = $"exec SalvarAssociadoEmpresa '{Index.Split("/")(1).Trim()}', '{associado.Cpf}'"
+                Dim table2 As New DataTable
+                table = AcessoDAL.GetDataTable(sql2)
+            Next
+            Return GetAssociado(table)
         Catch ex As Exception
             Throw ex
         End Try

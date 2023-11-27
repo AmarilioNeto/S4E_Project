@@ -9,22 +9,15 @@ Public Class CadastrarAssociado
                 Dim BLL As New AssociadoBLL
                 Dim empresas = BLL.ObterEmpresas()
                 If empresas.Rows.Count > 0 Then
-                    Dim text As List(Of String) = New List(Of String)
-                    Dim value As List(Of String) = New List(Of String)
-
                     For index As Integer = 0 To empresas.Rows.Count - 1
                         Dim nomeEmpresa = empresas.Rows(index).ItemArray(0)
                         Dim cnpj = empresas.Rows(index).ItemArray(1)
                         Dim id = empresas.Rows(index).ItemArray(2)
                         Dim concat = nomeEmpresa + " / " + cnpj
-                        text.Add(concat)
-                        value.Add(id.ToString())
                         ListarEmpresa.Items.Add(concat)
                     Next
 
                 End If
-            Else
-
             End If
 
         Catch ex As Exception
@@ -37,7 +30,7 @@ Public Class CadastrarAssociado
 
             Dim BLL As New AssociadoBLL
             associado.Nome = nome.Text
-            associado.Cpf = cpf.Text
+            associado.Cpf = cpf.Text.Replace(".", "").Replace("-", "").Trim()
             associado.DataNascimento = Convert.ToDateTime(dataNascimento.Text)
             associado.ListEmpresas = New List(Of String)
             For Each index In EmpresasAdicionadas.Items
@@ -45,8 +38,8 @@ Public Class CadastrarAssociado
             Next
 
             Dim verificaCpf As String = BLL.VerificaCPF(associado.Cpf.ToString())
-            Dim cpfVerificado = verificaCpf
-            If cpfVerificado = False Then
+
+            If verificaCpf <> "True" Then
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", $"alertaPopUp('CPF {associado.Cpf} já está Cadastrado') ", True)
                 Return
             Else

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AlterarAssociado
+Partial Public Class AlterarEmpresa
 
     '''<summary>
     '''Controle nome.
@@ -23,128 +23,119 @@ Partial Public Class AlterarAssociado
     Protected WithEvents nome As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Controle cpf.
+    '''Controle cnpj.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents cpf As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cnpj As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Controle dataNascimento.
+    '''Controle AssociadosJaRelacioandos.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents dataNascimento As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents AssociadosJaRelacioandos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Controle EmpresasJaRelacioandas.
+    '''Controle AssociadosRelacionados.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents EmpresasJaRelacioandas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents AssociadosRelacionados As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
-    '''Controle EmpresasRelacionadas.
+    '''Controle RemoveAssociadoRelacionado.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents EmpresasRelacionadas As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents RemoveAssociadoRelacionado As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Controle RemoveEmpresaRelacionada.
+    '''Controle AssociadosRemovidos.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents RemoveEmpresaRelacionada As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents AssociadosRemovidos As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
-    '''Controle EmpresasRemovidas.
+    '''Controle AddAsscociadoRelacionado.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents EmpresasRemovidas As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents AddAsscociadoRelacionado As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Controle AddEmpresasRelacioanda.
+    '''Controle AltualizarJaRelocionados.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents AddEmpresasRelacioanda As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents AltualizarJaRelocionados As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Controle AltualizarJaRelocionadas.
+    '''Controle AssociadosNaoRelacioandos.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents AltualizarJaRelocionadas As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents AssociadosNaoRelacioandos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Controle EmpresasNaoRelacioandas.
+    '''Controle ListarAssociados.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents EmpresasNaoRelacioandas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents ListarAssociados As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Controle ListarEmpresa.
+    '''Controle AddAssociado.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents ListarEmpresa As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents AddAssociado As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Controle AddEmpresa.
+    '''Controle AssociadosAdicionados.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents AddEmpresa As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents AssociadosAdicionados As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
-    '''Controle EmpresasAdicionadas.
+    '''Controle RemoveAssociado.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents EmpresasAdicionadas As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents RemoveAssociado As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Controle RemoveEmpresa.
+    '''Controle AtualizarNaoRelaiconados.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
-    Protected WithEvents RemoveEmpresa As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Controle AtualizarNaoRelaiconadas.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents AtualizarNaoRelaiconadas As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents AtualizarNaoRelaiconados As Global.System.Web.UI.WebControls.Button
 End Class

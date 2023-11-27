@@ -154,9 +154,11 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Formularios\AlterarAssociado.aspx" />
+    <Content Include="Formularios\AlterarEmpresa.aspx" />
     <Content Include="Formularios\CadastrarAssociado.aspx" />
     <Content Include="Formularios\CadastrarEmpresa.aspx" />
     <Content Include="Formularios\ConsultarAssociado.aspx" />
+    <Content Include="Formularios\ConsultarEmpresa.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -231,6 +233,13 @@
       <DependentUpon>AlterarAssociado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Formularios\AlterarEmpresa.aspx.designer.vb">
+      <DependentUpon>AlterarEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AlterarEmpresa.aspx.vb">
+      <DependentUpon>AlterarEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Formularios\CadastrarAssociado.aspx.designer.vb">
       <DependentUpon>CadastrarAssociado.aspx</DependentUpon>
     </Compile>
@@ -250,6 +259,13 @@
     </Compile>
     <Compile Include="Formularios\ConsultarAssociado.aspx.vb">
       <DependentUpon>ConsultarAssociado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\ConsultarEmpresa.aspx.designer.vb">
+      <DependentUpon>ConsultarEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ConsultarEmpresa.aspx.vb">
+      <DependentUpon>ConsultarEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
